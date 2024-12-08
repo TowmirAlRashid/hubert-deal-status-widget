@@ -37,7 +37,7 @@ function App() {
         // get module status field details
         const fieldsResp = await ZOHO.CRM.META.getFields({ Entity: entity });
         fieldsResp?.fields?.forEach((field) => {
-          if (field?.api_name === "Stage") {
+          if (field?.api_name === "Stage" || field?.api_name === "Status") {
             let pick_list_values = field?.pick_list_values?.map(
               (value) => value?.display_value
             );
